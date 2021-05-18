@@ -1,0 +1,33 @@
+@import '../../../assets/scss/style.scss';
+@import '../../../assets/scss/jquery.bxslider.scss';
+
+.map{
+  height: 500px;
+}
+
+.input-box{
+  position: relative;
+  input::placeholder{
+    color: #ffffff!important;
+  }
+  input[type="button"]{
+    text-align: start;
+  }
+  .invalid-input{
+    border-color: #f35959a3!important;
+  }
+  .invalid-notif{
+    margin-top: 5px;
+    color: #ef4d4d;
+    background-color: #fffafab0;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 13px;
+  }
+}
+
+.btn-one:hover{
+  background: #8bc43f!important;
+  color: #ffffff!important;
+}
+

@@ -1,0 +1,127 @@
+<!--Start breadcrumb area-->
+<section class="breadcrumb-area" style="background-image: url(../../../assets/images/resources/breadcrumb-bg.jpg);">
+  <div class="container">
+      <div class="row">
+          <div class="col-xl-12">
+              <div class="inner-content clearfix">
+                  <div class="title float-left">
+                     <h2>Stomatoloji xidmətlər</h2>
+                  </div>
+                  <div class="breadcrumb-menu float-right">
+                      <ul class="clearfix">
+                          <li><a [routerLink]="">Əsas Səhifə</a></li>
+                          <li><i class="fa fa-angle-right" aria-hidden="true"></i></li>
+                          <li class="active">Xidmətlərimiz</li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+      </div>
+</div>
+</section>
+<!--End breadcrumb area-->
+
+<!--Start services style1 area-->
+<section class="services-style1-area spec-page">
+  <div class="container">
+      <div class="sec-title max-width text-center">
+          <h3>Xidmətlərimiz</h3>
+          <h1>Stomatoloji xidmətlər</h1>
+          <p>Dişləriniz gündəlik həyatda mühüm rol oynayır. Yalnız yeməyinizi çeynəməyinizə və yeməyinizə kömək etmir, həm də üzünüzü çərçivəyə salır. Hər hansı bir dişi itirmək həyat keyfiyyətinizə böyük təsir göstərə bilər.</p>
+      </div>
+      <div class="row justify-content-center">
+          <!--Start single solution style1-->
+          <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12" *ngFor="let service of serviceList; i as index">
+              <div class="single-solution-style1 wow fadeInUp" data-wow-delay=`${300*i}ms`>
+                  <div class="img-holder">
+                      <img [src]="service.imgPath" alt="Awesome Image">
+                      <div class="icon-holder">
+                          <div class="inner-content">
+                              <div class="box">
+                                  <span class="{{service.icon}}"></span>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="text-holder">
+                      <h3>{{service.name}}</h3>
+                      <p>{{service.description}}</p>
+                      <!-- <div class="readmore">
+                          <a href="#"><span class="icon-plus"></span></a>
+                          <div class="overlay-button">
+                              <a href="#">Read More</a>
+                          </div>
+                      </div> -->
+                  </div>
+              </div>
+          </div>
+          <!--End single solution style1-->
+
+      </div>
+  </div>
+</section>
+<!--End services style1 area-->
+
+<!--Start Choose area Style2-->
+<section class="choose-area style2" style="background-image: url(../../../assets/images/parallax-background/choose-bg.jpg);">
+  <div class="container">
+      <div class="row">
+          <div class="col-xl-12">
+
+              <div class="choose-carousel2 ">
+                <owl-carousel-o [options]="customOptions">
+                  <ng-template carouselSlide>
+                  <!--Start single choose box-->
+                  <div class="single-choose-box style2 text-center wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="600ms">
+                      <div class="count">
+                          <span>01</span>
+                      </div>
+                      <div class="icon-holder">
+                          <span class="icon-doctor"></span>
+                      </div>
+                      <h3>Qayğıkeş və yüksək ixtisaslı həkimlər</h3>
+                  </div>
+                  <!--End single choose box-->
+                  </ng-template>
+                  <ng-template carouselSlide>
+                  <!--Start single choose box-->
+                  <div class="single-choose-box style2 text-center wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="900ms">
+                      <div class="count">
+                          <span>02</span>
+                      </div>
+                      <div class="icon-holder">
+                          <span class="icon-dentist-2"></span>
+                      </div>
+                      <h3>Klinikamızda ən yaxşı avadanlıqlardan istifadə edilir</h3>
+                  </div>
+                  <!--End single choose box-->
+                  </ng-template>
+                  <ng-template carouselSlide>
+                  <!--Start single choose box-->
+                  <div class="single-choose-box style2 text-center wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1200ms">
+                      <div class="count">
+                          <span>03</span>
+                      </div>
+                      <div class="icon-holder">
+                          <span class="icon-ui"></span>
+                      </div>
+                      <h3>Həkim qəbuluna onlayn qeydiyyat</h3>
+                  </div>
+                  <!--End single choose box-->
+                  </ng-template>
+
+                </owl-carousel-o>
+
+              </div>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-xl-12">
+              <div class="choose-bottom-text">
+                  <p>Dişləriniz gündəlik həyatda mühüm rol oynayır. Yalnız yeməyinizi çeynəməyinizə və yeməyinizə kömək etmir, həm də üzünüzü çərçivəyə salır. Hər hansı bir dişi itirmək həyat keyfiyyətinizə böyük təsir göstərə bilər.</p>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+<!--End Choose area Style2-->

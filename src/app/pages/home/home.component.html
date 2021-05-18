@@ -1,0 +1,786 @@
+<!--Main Slider-->
+<app-carousel></app-carousel>
+<!--End Main Slider-->
+
+<!--Start About Area-->
+<section class="about-area">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-6">
+        <div class="about-logo-box">
+          <div class="sec-title">
+            <h3>About Us</h3>
+            <h1>Mission and Story About<br> Our Dento</h1>
+          </div>
+          <ul class="fix">
+            <li class="wow fadeInDown" data-wow-delay="300ms">
+              <img src="../assets/images/resources/certificate-1.png" alt="Image">
+            </li>
+            <li class="wow fadeInUp" data-wow-delay="600ms">
+              <img src="../assets/images/resources/certificate-2.png" alt="Image">
+            </li>
+            <li class="wow fadeInUp" data-wow-delay="900ms">
+              <img src="../assets/images/resources/certificate-3.png" alt="Image">
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-xl-6">
+        <div class="about-text-holder">
+          <p>Dento was started in the year 1995 as a small private dental clinic in Binghamton, NY, USA. Looking for
+            affordable dental care?</p>
+          <p>To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some
+            advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has
+            no annoying consequences, pain resultant pleasure praising teachings of the great explorer...</p>
+          <div class="author-box fix">
+            <div class="img-box">
+              <img src="../assets/images/resources/ceo.png" alt="Awesome Image">
+            </div>
+            <div class="text-box">
+              <h3>Dr. Jerome Sinclair</h3>
+              <span>CEO & Founder</span>
+            </div>
+            <div class="signatire-box">
+              <img src="../assets/images/resources/signature.png" alt="Signature">
+            </div>
+          </div>
+          <div class="read-more">
+            <a class="btn-two" href="#"><span class="flaticon-next"></span>More About Us</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--End About Area-->
+
+
+<!--Start Appointment area-->
+<section class="highlights-area">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-12 wow fadeInUp" data-wow-delay="600ms">
+        <!--Start single box-->
+        <div class="single-box float-left text-center">
+          <div class="icon-holder">
+            <span class="icon-support-1"></span>
+          </div>
+          <h3>E-Konsultasiya</h3>
+          <span class="border-box"></span>
+          <p>Sadəcə formu doldurun.</p>
+          <a href="#">Buradan başların</a>
+        </div>
+        <!--End single box-->
+        <!--Start single box-->
+        <div class="single-middle-box float-left text-center">
+          <div class="icon-holder">
+            <span class="icon-support-1"></span>
+          </div>
+          <h3>Həkim qəbuluna yazılın</h3>
+          <form name="visit-form" (ngSubmit)="submit()" [formGroup]="appForm">
+            <div class="row mar-ninus10">
+              <div class="col-xl-4 pd10">
+                <div class="input-box">
+                  <input type="text" placeholder="Ad Soyad" formControlName="fullname" [ngClass]="{ 'invalid-input': submitted && f.fullname.errors }">
+                  <div *ngIf="submitted && f.fullname.errors" class="invalid-notif">
+                    <div *ngIf="f.fullname.errors.required">Adınızı daxil edin</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-4 pd10">
+                <div class="input-box">
+                  <input type="text" placeholder="Telefon nömrəsi" formControlName="phone" [ngClass]="{ 'invalid-input': submitted && f.phone.errors }" appPhoneMask>
+                  <div *ngIf="submitted && f.phone.errors" class="invalid-notif">
+                    <div *ngIf="f.phone.errors.required">Nömrənizi daxil edin</div>
+                    <div *ngIf="f.phone.errors.minlength">Nömrənizi düzgün daxil edin</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-4 pd10">
+                <div class="input-box">
+                  <select class="selectmenu" formControlName="service" placeholder="Xidmət növü">
+                    <option disabled selected>Xidmət növü</option>
+                    <option *ngFor="let opt of services" value = {{opt}}>{{opt}}</option>
+                  </select>  
+                  <div *ngIf="submitted && unSelected" class="invalid-notif">
+                    Xidmət növünü seçin
+                  </div>                
+                </div>
+              </div>
+            </div>
+            <div class="row mar-ninus10">
+              <div class="col-xl-4 pd10">
+                <div class="input-box">
+                  <input type="button" name="time" formControlName="time">
+                  <div class="icon-box">
+                    <i class="fa fa-clock-o" aria-hidden="true"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-4 pd10">
+                <div class="input-box">
+                  <input type="button" name="date" id="datepicker" formControlName="date">
+                  <div class="icon-box">
+                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-4 pd10">
+                <div class="button-box">
+                  <button class="btn-one" type="submit">Təsdiqlə</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <!--End single box-->
+        <!--Start single box-->
+        <div class="single-box float-right text-center">
+          <div class="icon-holder">
+            <span class="icon-support-1"></span>
+          </div>
+          <h3>Həkim Tap</h3>
+          <span class="border-box"></span>
+          <p>Komandamızla tanış olun.</p>
+          <a href="#">Həkimlərimiz</a>
+        </div>
+        <!--End single box-->
+      </div>
+    </div>
+  </div>
+</section>
+<!--End Appointment area-->
+
+
+<!--Start services area-->
+<service-carousel></service-carousel>
+<!--End services area-->
+
+<!--Start team area-->
+<team-carousel></team-carousel>
+<!--End team area-->
+<div class="map">
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d757.2912281476689!2d49.66293048812858!3d40.60418499870264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDM2JzE1LjEiTiA0OcKwMzknNDguNSJF!5e0!3m2!1sen!2s!4v1620680063791!5m2!1sen!2s"
+    width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+</div>
+<!--Start works area-->
+<section class="works-area gray-bg">
+  <div class="container wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
+    <div class="sec-title-box text-center">
+      <h3>We promised to take care our patients…<br> and we delivered.</h3>
+    </div>
+    <div class="row">
+      <div class="col-xl-12">
+        <div class="works-content">
+          <div class="works-tab-box">
+            <div class="tabmenu-box text-center">
+              <ul class="tab-btns tab-buttons">
+                <li class="p-tab-btn active-btn" data-tab="#p-tab-1"><span>Implants</span></li>
+                <li class="p-tab-btn" data-tab="#p-tab-2"><span>Thereaphy</span></li>
+                <li class="p-tab-btn" data-tab="#p-tab-3"><span>surgery</span></li>
+                <li class="p-tab-btn" data-tab="#p-tab-4"><span>Braces</span></li>
+                <li class="p-tab-btn" data-tab="#p-tab-5"><span>Cleaning</span></li>
+              </ul>
+            </div>
+            <div class="tab-content-box">
+
+              <div class="single-tab-content active-tab" id="p-tab-1">
+                <div class="tab-content-carousel owl-carousel owl-theme">
+                  <!--Start Single Item-->
+                  <div class="single-item">
+                    <div class="row mar0">
+                      <div class="col-xl-6 col-lg-6 col-md-6 col-12 pd0">
+                        <div class="img-holder">
+                          <img src="../assets/images/resources/teeth-before-1.jpg" alt="Awesome Image">
+                          <div class="before">
+                            <a href="#">Before</a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xl-6 col-lg-6 col-md-6 col-12 pd0">
+                        <div class="img-holder">
+                          <img src="../assets/images/resources/teeth-after-1.jpg" alt="Awesome Image">
+                          <div class="after">
+                            <a href="#">After</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--End Single Item-->
+                  <!--Start Single Item-->
+                  <div class="single-item">
+                    <div class="row mar0">
+                      <div class="col-xl-6 col-lg-6 col-md-6 col-12 pd0">
+                        <div class="img-holder">
+                          <img src="../assets/images/resources/teeth-before-1.jpg" alt="Awesome Image">
+                          <div class="before">
+                            <a href="#">Before</a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xl-6 col-lg-6 col-md-6 col-12 pd0">
+                        <div class="img-holder">
+                          <img src="../assets/images/resources/teeth-after-1.jpg" alt="Awesome Image">
+                          <div class="after">
+                            <a href="#">After</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--End Single Item-->
+                  <!--Start Single Item-->
+                  <div class="single-item">
+                    <div class="row mar0">
+                      <div class="col-xl-6 col-lg-6 col-md-6 col-12 pd0">
+                        <div class="img-holder">
+                          <img src="../assets/images/resources/teeth-before-1.jpg" alt="Awesome Image">
+                          <div class="before">
+                            <a href="#">Before</a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xl-6 col-lg-6 col-md-6 col-12 pd0">
+                        <div class="img-holder">
+                          <img src="../assets/images/resources/teeth-after-1.jpg" alt="Awesome Image">
+                          <div class="after">
+                            <a href="#">After</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--End Single Item-->
+                </div>
+              </div>
+
+              <div class="single-tab-content" id="p-tab-2">
+                <div class="tab-content-carousel owl-carousel owl-theme">
+                  <!--Start Single Item-->
+                  <div class="single-item">
+                    <div class="row mar0">
+                      <div class="col-xl-6 col-lg-6 col-md-6 col-12 pd0">
+                        <div class="img-holder">
+                          <img src="../assets/images/resources/teeth-before-1.jpg" alt="Awesome Image">
+                          <div class="before">
+                            <a href="#">Before</a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xl-6 col-lg-6 col-md-6 col-12 pd0">
+                        <div class="img-holder">
+                          <img src="../../assets/images/resources/teeth-after-1.jpg" alt="Awesome Image">
+                          <div class="after">
+                            <a href="#">After</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--End Single Item-->
+                  <!--Start Single Item-->
+                  <div class="single-item">
+                    <div class="row mar0">
+                      <div class="col-xl-6 col-lg-6 col-md-6 col-12 pd0">
+                        <div class="img-holder">
+                          <img src="../../assets/images/resources/teeth-before-1.jpg" alt="Awesome Image">
+                          <div class="before">
+                            <a href="#">Before</a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xl-6 col-lg-6 col-md-6 col-12 pd0">
+                        <div class="img-holder">
+                          <img src="../assets/images/resources/teeth-after-1.jpg" alt="Awesome Image">
+                          <div class="after">
+                            <a href="#">After</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--End Single Item-->
+                  <!--Start Single Item-->
+                  <div class="single-item">
+                    <div class="row mar0">
+                      <div class="col-xl-6 col-lg-6 col-md-6 col-12 pd0">
+                        <div class="img-holder">
+                          <img src="../../assets/images/resources/teeth-before-1.jpg" alt="Awesome Image">
+                          <div class="before">
+                            <a href="#">Before</a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xl-6 col-lg-6 col-md-6 col-12 pd0">
+                        <div class="img-holder">
+                          <img src="../../assets/images/resources/teeth-after-1.jpg" alt="Awesome Image">
+                          <div class="after">
+                            <a href="#">After</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--End Single Item-->
+                </div>
+              </div>
+
+              <div class="single-tab-content" id="p-tab-3">
+                <div class="tab-content-carousel owl-carousel owl-theme">
+                  <!--Start Single Item-->
+                  <div class="single-item">
+                    <div class="row mar0">
+                      <div class="col-xl-6 col-lg-6 col-md-6 col-12 pd0">
+                        <div class="img-holder">
+                          <img src="../../assets/images/resources/teeth-before-1.jpg" alt="Awesome Image">
+                          <div class="before">
+                            <a href="#">Before</a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xl-6 col-lg-6 col-md-6 col-12 pd0">
+                        <div class="img-holder">
+                          <img src="../../assets/images/resources/teeth-after-1.jpg" alt="Awesome Image">
+                          <div class="after">
+                            <a href="#">After</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--End Single Item-->
+                  <!--Start Single Item-->
+                  <div class="single-item">
+                    <div class="row mar0">
+                      <div class="col-xl-6 col-lg-6 col-md-6 col-12 pd0">
+                        <div class="img-holder">
+                          <img src="../assets/images/resources/teeth-before-1.jpg" alt="Awesome Image">
+                          <div class="before">
+                            <a href="#">Before</a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xl-6 col-lg-6 col-md-6 col-12 pd0">
+                        <div class="img-holder">
+                          <img src="../assets/images/resources/teeth-after-1.jpg" alt="Awesome Image">
+                          <div class="after">
+                            <a href="#">After</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--End Single Item-->
+                  <!--Start Single Item-->
+                  <div class="single-item">
+                    <div class="row mar0">
+                      <div class="col-xl-6 col-lg-6 col-md-6 col-12 pd0">
+                        <div class="img-holder">
+                          <img src="../assets/images/resources/teeth-before-1.jpg" alt="Awesome Image">
+                          <div class="before">
+                            <a href="#">Before</a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xl-6 col-lg-6 col-md-6 col-12 pd0">
+                        <div class="img-holder">
+                          <img src="../assets/images/resources/teeth-after-1.jpg" alt="Awesome Image">
+                          <div class="after">
+                            <a href="#">After</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--End Single Item-->
+                </div>
+              </div>
+
+              <div class="single-tab-content" id="p-tab-4">
+                <div class="tab-content-carousel owl-carousel owl-theme">
+                  <!--Start Single Item-->
+                  <div class="single-item">
+                    <div class="row mar0">
+                      <div class="col-xl-6 col-lg-6 col-md-6 col-12 pd0">
+                        <div class="img-holder">
+                          <img src="../assets/images/resources/teeth-before-1.jpg" alt="Awesome Image">
+                          <div class="before">
+                            <a href="#">Before</a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xl-6 col-lg-6 col-md-6 col-12 pd0">
+                        <div class="img-holder">
+                          <img src="../assets/images/resources/teeth-after-1.jpg" alt="Awesome Image">
+                          <div class="after">
+                            <a href="#">After</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--End Single Item-->
+                  <!--Start Single Item-->
+                  <div class="single-item">
+                    <div class="row mar0">
+                      <div class="col-xl-6 col-lg-6 col-md-6 col-12 pd0">
+                        <div class="img-holder">
+                          <img src="../assets/images/resources/teeth-before-1.jpg" alt="Awesome Image">
+                          <div class="before">
+                            <a href="#">Before</a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xl-6 col-lg-6 col-md-6 col-12 pd0">
+                        <div class="img-holder">
+                          <img src="../assets/images/resources/teeth-after-1.jpg" alt="Awesome Image">
+                          <div class="after">
+                            <a href="#">After</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--End Single Item-->
+                  <!--Start Single Item-->
+                  <div class="single-item">
+                    <div class="row mar0">
+                      <div class="col-xl-6 col-lg-6 col-md-6 col-12 pd0">
+                        <div class="img-holder">
+                          <img src="../assets/images/resources/teeth-before-1.jpg" alt="Awesome Image">
+                          <div class="before">
+                            <a href="#">Before</a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xl-6 col-lg-6 col-md-6 col-12 pd0">
+                        <div class="img-holder">
+                          <img src="../assets/images/resources/teeth-after-1.jpg" alt="Awesome Image">
+                          <div class="after">
+                            <a href="#">After</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--End Single Item-->
+                </div>
+              </div>
+
+              <div class="single-tab-content" id="p-tab-5">
+                <div class="tab-content-carousel owl-carousel owl-theme">
+                  <!--Start Single Item-->
+                  <div class="single-item">
+                    <div class="row mar0">
+                      <div class="col-xl-6 col-lg-6 col-md-6 col-12 pd0">
+                        <div class="img-holder">
+                          <img src="../assets/images/resources/teeth-before-1.jpg" alt="Awesome Image">
+                          <div class="before">
+                            <a href="#">Before</a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xl-6 col-lg-6 col-md-6 col-12 pd0">
+                        <div class="img-holder">
+                          <img src="../assets/images/resources/teeth-after-1.jpg" alt="Awesome Image">
+                          <div class="after">
+                            <a href="#">After</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--End Single Item-->
+                  <!--Start Single Item-->
+                  <div class="single-item">
+                    <div class="row mar0">
+                      <div class="col-xl-6 col-lg-6 col-md-6 col-12 pd0">
+                        <div class="img-holder">
+                          <img src="../assets/images/resources/teeth-before-1.jpg" alt="Awesome Image">
+                          <div class="before">
+                            <a href="#">Before</a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xl-6 col-lg-6 col-md-6 col-12 pd0">
+                        <div class="img-holder">
+                          <img src="../assets/images/resources/teeth-after-1.jpg" alt="Awesome Image">
+                          <div class="after">
+                            <a href="#">After</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--End Single Item-->
+                  <!--Start Single Item-->
+                  <div class="single-item">
+                    <div class="row mar0">
+                      <div class="col-xl-6 col-lg-6 col-md-6 col-12 pd0">
+                        <div class="img-holder">
+                          <img src="../assets/images/resources/teeth-before-1.jpg" alt="Awesome Image">
+                          <div class="before">
+                            <a href="#">Before</a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xl-6 col-lg-6 col-md-6 col-12 pd0">
+                        <div class="img-holder">
+                          <img src="../assets/images/resources/teeth-after-1.jpg" alt="Awesome Image">
+                          <div class="after">
+                            <a href="#">After</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--End Single Item-->
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--End works area-->
+
+
+<!--Start Testimonial area-->
+<!-- <section class="testimonial-area">
+  <div class="container inner-content">
+      <div class="row">
+          <div class="col-xl-12">
+              <div class="sec-title float-left">
+                  <h3>Feedback</h3>
+                  <h1>What Our Customers Say?</h1>
+              </div>
+              <div class="button float-right">
+                  <a class="btn-one" href="#">Read More</a>
+              </div>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-xl-12">
+              <div class="testimonial-carousel owl-carousel owl-theme">
+                  <div class="single-testimonial-item text-center">
+                      <div class="text-holder">
+                          <p>It was an experience of lifetime with you guys….it is definitely the best dental clinic I have ever visited.</p>
+                          <div class="img-holder">
+                              <img src="../assets/images/testimonial/1.png" alt="Awesome Image">
+                          </div>
+                      </div>
+                      <div class="name">
+                          <h3>Erick Frederick</h3>
+                          <span>Denver</span>
+                      </div>
+                  </div>
+
+
+                  <div class="single-testimonial-item text-center">
+                      <div class="text-holder">
+                          <p>Now I’ve got my tooth back, I can eat anything I like again.  I would recommend dento centre to everyone.</p>
+                          <div class="img-holder">
+                              <img src="../assets/images/testimonial/2.png" alt="Awesome Image">
+                          </div>
+                      </div>
+                      <div class="name">
+                          <h3>Evelynne Celie</h3>
+                          <span>Houston</span>
+                      </div>
+                  </div>
+
+
+                  <div class="single-testimonial-item text-center">
+                      <div class="text-holder">
+                          <p>It was an experience of lifetime with you guys….it is definitely the best dental clinic I have ever visited.</p>
+                          <div class="img-holder">
+                              <img src="../assets/images/testimonial/1.png" alt="Awesome Image">
+                          </div>
+                      </div>
+                      <div class="name">
+                          <h3>Erick Frederick</h3>
+                          <span>Denver</span>
+                      </div>
+                  </div>
+
+
+                  <div class="single-testimonial-item text-center">
+                      <div class="text-holder">
+                          <p>Now I’ve got my tooth back, I can eat anything I like again.  I would recommend dento centre to everyone.</p>
+                          <div class="img-holder">
+                              <img src="../assets/images/testimonial/2.png" alt="Awesome Image">
+                          </div>
+                      </div>
+                      <div class="name">
+                          <h3>Evelynne Celie</h3>
+                          <span>Houston</span>
+                      </div>
+                  </div>
+
+
+                  <div class="single-testimonial-item text-center">
+                      <div class="text-holder">
+                          <p>It was an experience of lifetime with you guys….it is definitely the best dental clinic I have ever visited.</p>
+                          <div class="img-holder">
+                              <img src="../assets/images/testimonial/1.png" alt="Awesome Image">
+                          </div>
+                      </div>
+                      <div class="name">
+                          <h3>Erick Frederick</h3>
+                          <span>Denver</span>
+                      </div>
+                  </div>
+
+
+                  <div class="single-testimonial-item text-center">
+                      <div class="text-holder">
+                          <p>Now I’ve got my tooth back, I can eat anything I like again.  I would recommend dento centre to everyone.</p>
+                          <div class="img-holder">
+                              <img src="../assets/images/testimonial/2.png" alt="Awesome Image">
+                          </div>
+                      </div>
+                      <div class="name">
+                          <h3>Evelynne Celie</h3>
+                          <span>Houston</span>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section> -->
+<!--End Testimonial area-->
+
+<!--Start latest blog area-->
+<!-- <section class="latest-blog-area sec-pd1">
+  <div class="container inner-content">
+      <div class="sec-title max-width text-center">
+          <h3>News & Tips</h3>
+          <h1>Latest From Our Blog</h1>
+          <p>Your teeth play an important part in your daily life. It not only helps you to chew and eat your food, but frames your face. Any missing tooth can have a major impact on your quality of life.</p>
+      </div>
+      <div class="row">
+          <div class="col-xl-4 col-lg-4 col-md-12 col-12">
+              <div class="single-blog-post">
+                  <div class="img-holder">
+                      <img src="../assets/images/blog/lat-blog-1.jpg" alt="Awesome Image">
+                      <div class="categorie-button">
+                          <a class="btn-one" href="#">Healthy Teeth</a>
+                      </div>
+                  </div>
+                  <div class="text-holder">
+                      <div class="meta-box">
+                          <div class="author-thumb">
+                              <img src="../assets/images/blog/author-1.png" alt="Image">
+                          </div>
+                          <ul class="meta-info">
+                              <li><a href="#">By Megan Clarks</a></li>
+                              <li><a href="#">Nov 14, 2018</a></li>
+                          </ul>
+                      </div>
+                      <h3 class="blog-title"><a href="blog-single.html">A guide for dentists and patients</a></h3>
+                      <div class="text-box">
+                          <p>No one rejects, dislikes our avoids pleasures itself, because it is all pleasure, but because those who do not know.</p>
+                      </div>
+                      <div class="readmore-button">
+                          <a class="btn-two" href="#"><span class="flaticon-next"></span>Continue REading</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+
+          <div class="col-xl-4 col-lg-4 col-md-12 col-12">
+              <div class="single-blog-post">
+                  <div class="img-holder">
+                      <img src="../assets/images/blog/lat-blog-2.jpg" alt="Awesome Image">
+                      <div class="categorie-button">
+                          <a class="btn-one" href="#">Technology</a>
+                      </div>
+                  </div>
+                  <div class="text-holder">
+                      <div class="meta-box">
+                          <div class="author-thumb">
+                              <img src="../assets/images/blog/author-2.png" alt="Image">
+                          </div>
+                          <ul class="meta-info">
+                              <li><a href="#">By Megan Clarks</a></li>
+                              <li><a href="#">Nov 14, 2018</a></li>
+                          </ul>
+                      </div>
+                      <h3 class="blog-title"><a href="blog-single.html">Should i go for a smile design?</a></h3>
+                      <div class="text-box">
+                          <p>Nor again is there anyone who love pursues or desires to obtain pain of itself, bepain, but occasionally circumstances.</p>
+                      </div>
+                      <div class="readmore-button">
+                          <a class="btn-two" href="#"><span class="flaticon-next"></span>Continue REading</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+
+          <div class="col-xl-4 col-lg-4 col-md-12 col-12">
+              <div class="single-blog-post">
+                  <div class="img-holder">
+                      <img src="../assets/images/blog/lat-blog-3.jpg" alt="Awesome Image">
+                      <div class="categorie-button">
+                          <a class="btn-one" href="#">Dental Care</a>
+                      </div>
+                  </div>
+                  <div class="text-holder">
+                      <div class="meta-box">
+                          <div class="author-thumb">
+                              <img src="../assets/images/blog/author-3.png" alt="Image">
+                          </div>
+                          <ul class="meta-info">
+                              <li><a href="#">By Megan Clarks</a></li>
+                              <li><a href="#">Nov 14, 2018</a></li>
+                          </ul>
+                      </div>
+                      <h3 class="blog-title"><a href="blog-single.html">What you need to know teeth?</a></h3>
+                      <div class="text-box">
+                          <p>It not only helps you to chew and eat your food frames your faceany missing tooth can major impact your quality of life.</p>
+                      </div>
+                      <div class="readmore-button">
+                          <a class="btn-two" href="#"><span class="flaticon-next"></span>Continue REading</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section> -->
+<!--End latest blog area-->
+
+<!--Start newsletter area-->
+<!-- <section class="newsletter-area">
+  <div class="container">
+      <div class="newsletter-title text-center">
+          <h3>Newsletter Subscription</h3>
+          <span>Subscribe us and get latest news, updates and offers in your inbox.</span>
+      </div>
+      <form class="newsletter-form" action="#">
+          <div class="row">
+              <div class="col-xl-3 col-lg-3 col-md-12">
+                  <input type="text" name="fname" placeholder="First Name">
+              </div>
+              <div class="col-xl-3 col-lg-3 col-md-12">
+                  <input type="text" name="lname" placeholder="Last Name">
+              </div>
+              <div class="col-xl-3 col-lg-3 col-md-12">
+                  <input type="email" name="email" placeholder="Email">
+              </div>
+              <div class="col-xl-3 col-lg-3 col-md-12">
+                  <button class="btn-one" type="submit">Subscribe</button>
+              </div>
+          </div>
+      </form>
+  </div>
+</section> -->
+<!--End newsletter area-->
